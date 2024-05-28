@@ -1,39 +1,34 @@
 import React from "react";
-import { StyleSheet, Text, View , ImageBackground, TouchableOpacity, ScrollView} from 'react-native';
+import { StyleSheet, Text, View , ImageBackground, TouchableOpacity, ScrollView,SafeAreaView} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome' ;
 import { primaryColor, secondaryColor, naturalColor, complementatry, alertColor, succesColor } from "../config/Config";
-import NavBar from "../pages/navbar";
 
 
 
-export default function Profile() {
-const btnPress =()=>{
-  console.log("pressed");
 
-}
+export default function ProfilePage({navigation}) {
+  
   return (
-    <View style={styles.global_container}>
-
-    {/* container */}
-    <View style={styles.page_container}>
+    <SafeAreaView style={styles.global_container}>
 
     {/* header */}
     <View style={styles.header}>
       <View style={styles.header_btn_container}>
-        <TouchableOpacity onPress={btnPress}>
-          <Icon name="chevron-left"  style={styles.header_btn}>
-          </Icon>
-          </TouchableOpacity>
-      
+        <TouchableOpacity onPress={()=>navigation.goBack()}>
+          <Icon name="chevron-left"  style={styles.header_btn}></Icon>
+        </TouchableOpacity>
       </View>
       <View style={styles.header_btn_container}>
-        <TouchableOpacity onPress={btnPress} >
-          <Icon name="gears" style={styles.header_btn}>
+        <TouchableOpacity onPress={()=>navigation.navigate("listPage")}>
+          <Icon name="list-ul" style={styles.header_btn}>
           </Icon>
           </TouchableOpacity>
       
       </View>
     </View>
+
+    {/* container */}
+    <ScrollView contentContainerStyle={styles.page_container}>
 
     {/* user card */}
     <View style={styles.user_card}>
@@ -86,18 +81,6 @@ const btnPress =()=>{
     <View style={styles.family_members_container}>
 
     <View style={styles.family_members} >
-      <View style={styles.member}>   
-      <ImageBackground style={styles.member_img} source={require('../../images/member.jpg')}></ImageBackground>
-      </View>
-
-      <View  style={styles.member}>
-        <ImageBackground style={styles.member_img} source={require('../../images/member.jpg')}></ImageBackground>
-      </View>
-
-      <View  style={styles.member}>
-        <ImageBackground style={styles.member_img} source={require('../../images/member.jpg')}></ImageBackground>
-      </View>
-
       <View  style={styles.member}>
         <ImageBackground style={styles.member_img} source={require('../../images/member.jpg')}></ImageBackground>
       </View>
@@ -113,41 +96,34 @@ const btnPress =()=>{
       </View>
 
       <View style={styles.see_more}>
-        <TouchableOpacity onPress={btnPress}>          
+        <TouchableOpacity >          
           <Text style={{textDecorationLine:"underline"}} > see more <Icon name="chevron-right"></Icon></Text>
         </TouchableOpacity>
       </View>
 
     </View>
-    
-    </View>
 
-    {/* navbar  */}
-    <NavBar/>
-   
-    </View>
+    </ScrollView>
+
+     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   global_container:{
-    justifyContent:"center",
-    alignContent:"center",
-    width:"100%",
-    height:"100%",
-    backgroundColor:"white"
-
+    flex:1,
+    backgroundColor:naturalColor
   },  
   header:{
     width:"100%",
-    height:"10%",
+    height:50,
     flexDirection:"row",
     justifyContent:"space-between",
-    alignItems:"center",
-    paddingHorizontal:20,
+    padding:10,
   },
   header_btn:{
-    fontSize:20,
+    fontSize:22,
+    color:primaryColor
   },
   header_btn_container:{
     width:"10%",
@@ -155,13 +131,8 @@ const styles = StyleSheet.create({
     justifyContent:"center",
   },
   page_container:{
-    flexDirection:"column",
-    justifyContent:"center",
-    alignItems:"center",
-    width:"100%",
-    height:"90%",
-    paddingTop:30,
-
+    flexGrow:1,
+    alignItems:'center',
   },
   user_card:{
     height:300,
@@ -237,7 +208,7 @@ const styles = StyleSheet.create({
   },
   family_members_container:{
     width:"95%",
-    height:"45%",
+    height:150,
     marginTop:10,
     shadowColor:"black",
     shadowOffset:{
@@ -259,11 +230,10 @@ const styles = StyleSheet.create({
     justifyContent:"space-around",
     alignContent:"center",
     flexWrap:"wrap",
-
   },
   member:{
-  width:"26%",
-  height:"38%",
+  width:100,
+  height:100,
   marginBottom:10,
   backgroundColor:naturalColor,
   overflow:"hidden",
