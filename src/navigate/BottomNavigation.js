@@ -1,18 +1,14 @@
 import * as React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-
-
-
+import { TouchableOpacity} from "react-native";
+// importing icons 
 import {
   MaterialCommunityIcons,
   FontAwesome,
   Ionicons,
-} from "react-native-vector-icons/";
-
-
+} from "react-native-vector-icons";
 // importing the colors
 import {primaryColor } from "../config/Config";
-
 // importing the pages
 import HomePage from "../screens/Home";
 import ChatPage from "../screens/Chat";
@@ -24,15 +20,11 @@ const homeName = "Home";
 const chatName = "Chat";
 const profileName = "Profile";
 const notificationsName = "Notifications";
-const Post = "Post";
 
 const Tabs = createBottomTabNavigator();
 
-
-
 export default function BottomTapBar() {
   return (
-
       <Tabs.Navigator
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
@@ -47,8 +39,6 @@ export default function BottomTapBar() {
               return (
                 <Ionicons name={iconName} size={size} color={color}></Ionicons>
               );
-            } else if (routeName === Post) {
-              iconName = focused ? "plus-circle" : "plus-circle-outline";
             } else if (routeName === profileName) {
               iconName = focused ? "user" : "user-o";
               return (
@@ -67,19 +57,21 @@ export default function BottomTapBar() {
               ></MaterialCommunityIcons>
             );
           },
-       
           tabBarActiveTintColor: primaryColor,
           tabBarInactiveTintColor: "gray",
           headerStyle:{
             backgroundColor:primaryColor,
           },
-
           headerTintColor:"white",
           headerTitleStyle:{
             fontSize:20,
             fontWeight:"bold"
-          }
-
+          },
+         headerRight:()=>(
+          <TouchableOpacity style={{marginRight:15}}>
+            <Ionicons name="settings-outline" color="white" size="24"></Ionicons>
+          </TouchableOpacity>
+         )
         })}
       >
         <Tabs.Screen name={homeName} component={HomePage} />

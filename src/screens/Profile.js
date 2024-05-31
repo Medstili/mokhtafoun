@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View , ImageBackground, TouchableOpacity, ScrollView,SafeAreaView} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome' ;
-import { primaryColor, secondaryColor, naturalColor, complementatry, alertColor, succesColor } from "../config/Config";
+import Icon from 'react-native-vector-icons/FontAwesome' ; 
+import {  secondaryColor, naturalColor } from "../config/Config";
 
 
 
@@ -10,22 +10,6 @@ export default function ProfilePage({navigation}) {
   
   return (
     <SafeAreaView style={styles.global_container}>
-
-    {/* header */}
-    <View style={styles.header}>
-      <View style={styles.header_btn_container}>
-        <TouchableOpacity onPress={()=>navigation.goBack()}>
-          <Icon name="chevron-left"  style={styles.header_btn}></Icon>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.header_btn_container}>
-        <TouchableOpacity onPress={()=>navigation.navigate("listPage")}>
-          <Icon name="list-ul" style={styles.header_btn}>
-          </Icon>
-          </TouchableOpacity>
-      
-      </View>
-    </View>
 
     {/* container */}
     <ScrollView contentContainerStyle={styles.page_container}>
@@ -96,7 +80,7 @@ export default function ProfilePage({navigation}) {
       </View>
 
       <View style={styles.see_more}>
-        <TouchableOpacity >          
+        <TouchableOpacity onPress={()=>{navigation.push("Members")}}>          
           <Text style={{textDecorationLine:"underline"}} > see more <Icon name="chevron-right"></Icon></Text>
         </TouchableOpacity>
       </View>
@@ -114,22 +98,6 @@ const styles = StyleSheet.create({
     flex:1,
     backgroundColor:naturalColor
   },  
-  header:{
-    width:"100%",
-    height:50,
-    flexDirection:"row",
-    justifyContent:"space-between",
-    padding:10,
-  },
-  header_btn:{
-    fontSize:22,
-    color:primaryColor
-  },
-  header_btn_container:{
-    width:"10%",
-    alignItems:'center',
-    justifyContent:"center",
-  },
   page_container:{
     flexGrow:1,
     alignItems:'center',
@@ -156,6 +124,8 @@ const styles = StyleSheet.create({
     width:"100%",
     height:"100%",
     resizeMode: "cover",
+    borderRadius:"20%"
+
   },
   user_detail_container:{
     width:"50%",

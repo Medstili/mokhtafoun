@@ -19,7 +19,7 @@ const Data =[
     }
 ]
 
-const Item =({title, navigation})=>{
+const Item =({title})=>{
     return(
         <View style={styles.listContainer}>
             <View style={styles.btnContainer}>
@@ -32,7 +32,7 @@ const Item =({title, navigation})=>{
 }
 export default function listPage() {
   return (
-    <View>
+    <View style={styles.listContainer}>
       <Text>listPage</Text>
       <FlatList 
         data={Data}
@@ -45,8 +45,8 @@ export default function listPage() {
 
 const styles = StyleSheet.create({
     listContainer:{
-        width:200,
-        height:500,
+        width:250,
+        height:"100%",
         backgroundColor:primaryColor,
         flexDirection:"column",
         justifyContent:"space-around",
