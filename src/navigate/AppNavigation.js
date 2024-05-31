@@ -27,7 +27,7 @@ export default function AppNavigation() {
 
         <stack.Screen name={"Welcome"} component={Welcome} />
         <stack.Screen name={"Login"} component={Login} />
-        <stack.Screen name={"Sign Up"} component={SignUp} />
+        <stack.Screen name={"SignUp"} component={SignUp} />
         <stack.Screen name={"Forgot Password"} component={ForgotPassword} />
         <stack.Screen 
         options={{

@@ -89,7 +89,7 @@ export default function ProfilePage({navigation}) {
 
     </ScrollView>
 
-     </SafeAreaView>
+    </SafeAreaView>
   );
 }
 
@@ -110,42 +110,42 @@ const styles = StyleSheet.create({
   user_info:{
   flexDirection:"row",
   justifyContent:"space-around",
-  width:"100%",
-  height:"80%",
+  width:'100%',
+  height:'80%',
   },
   user_img_container: {
-    width: "45%",
-    height: "100%",
-    borderRadius:"20%",
+    width: '45%',
+    height: '100%',
+    borderRadius:20,
     overflow: "hidden", 
     backgroundColor:naturalColor,
   },
   user_img:{
-    width:"100%",
-    height:"100%",
+    width:'100%',
+    height:'100%',
     resizeMode: "cover",
     borderRadius:"20%"
 
   },
   user_detail_container:{
-    width:"50%",
-    height:"100%",
+    width:'50%',
+    height:'100%',
     flexDirection:"column",
     justifyContent :"space-around",
     padding: 10,
   },
   user_detail:{
-    width:"100%",
+    width:'100%',
     padding:5,
-    height:"20%",
+    height:'20%',
     backgroundColor:naturalColor,
-    borderRadius: '10%',
+    borderRadius:10,
     flexDirection:"row",
     justifyContent:"space-between",
     alignItems:"center",
   },
   scrollView: {
-    height:"100%",
+    height:'100%',
     flexDirection: "row",
   },
   user_detail_email:{
@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
   edit_profil:{
     justifyContent:"center",
     alignItems:"center",
-    borderRadius:"10%",
+    borderRadius:10,
     padding:10,
   },
   user_id:{
@@ -177,7 +177,7 @@ const styles = StyleSheet.create({
     padding:10,
   },
   family_members_container:{
-    width:"95%",
+    width:'95%',
     height:150,
     marginTop:10,
     shadowColor:"black",
@@ -194,8 +194,8 @@ const styles = StyleSheet.create({
     alignContent:"center"
   },
   family_members:{
-    width:"100%",
-    height:"85%",
+    width:'100%',
+    height:'85%',
     flexDirection:"row",
     justifyContent:"space-around",
     alignContent:"center",
@@ -207,16 +207,16 @@ const styles = StyleSheet.create({
   marginBottom:10,
   backgroundColor:naturalColor,
   overflow:"hidden",
-  borderRadius:"60%",
+  borderRadius:60,
   borderWidth:'1px',
   borderColor:"#006400",
   },
   member_img:{
-    width:"100%",
-    height:"100%",
+    width:'100%',
+    height:'100%',
   },
   see_more:{
-    width:"100%",
+    width:'100%',
     justifyContent:"center",
     alignItems:"center",
   },

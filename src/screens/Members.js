@@ -3,6 +3,10 @@ import React, { useState }  from 'react';
 import MemberCard from '../components/MemberCard';
 import {secondaryColor} from '../config/Config';
 import Icon from 'react-native-vector-icons/FontAwesome' ;
+<<<<<<< HEAD
+=======
+import { Header } from 'react-native/Libraries/NewAppScreen';
+>>>>>>> 8b438f06c9867819a186fc250206922c8f2e3e62
 
 
 const membersArr =[
@@ -87,8 +91,13 @@ export default function Members() {
                     ListEmptyComponent={<Text>No members found</Text>}
                 />
 
+<<<<<<< HEAD
                 <TouchableOpacity  style={{width:"100%", padding:20, justifyContent:"center", alignItems:"center", backgroundColor:secondaryColor}}>
                         <Text style={{fontSize:"34", fontWeight:"bold", color:"white",justifyContent:"center",}}>Add</Text>
+=======
+                <TouchableOpacity  style={{width:"100%",height:90, alignItems:"center",paddingTop:10, backgroundColor:secondaryColor}}>
+                        <Text style={{fontSize:"34", fontWeight:"bold", color:"white",justifyContent:"center"}}>Add</Text>
+>>>>>>> 8b438f06c9867819a186fc250206922c8f2e3e62
                 </TouchableOpacity>
 
             </View>
@@ -109,10 +118,15 @@ const styles = StyleSheet.create({
 
     },
     flastList:{
+<<<<<<< HEAD
         width:414,
         alignItems:"center",
         justifyContent:"center",
         padding:5,
+=======
+        width:412,
+        justifyContent:"center",
+>>>>>>> 8b438f06c9867819a186fc250206922c8f2e3e62
     },
     searchBar:{
         flexDirection:"row",
