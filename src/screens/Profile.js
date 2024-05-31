@@ -98,25 +98,6 @@ const styles = StyleSheet.create({
     flex:1,
     backgroundColor:naturalColor
   },  
-<<<<<<< HEAD
-=======
-  header:{
-    width:'100%',
-    height:50,
-    flexDirection:"row",
-    justifyContent:"space-between",
-    padding:10,
-  },
-  header_btn:{
-    fontSize:22,
-    color:primaryColor
-  },
-  header_btn_container:{
-    width:'10%',
-    alignItems:'center',
-    justifyContent:"center",
-  },
->>>>>>> 2e49eb3f37cb984fa3069accefdda71ae482a757
   page_container:{
     flexGrow:1,
     alignItems:'center',

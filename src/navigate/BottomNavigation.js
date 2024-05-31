@@ -10,21 +10,17 @@ import {
 // importing the colors
 import {primaryColor } from "../config/Config";
 // importing the pages
-import PostFeed from "../screens/PostFeed";
+import PostFeed from "../screens/Home";
 import ChatPage from "../screens/Chat";
 import ProfilePage from "../screens/Profile";
 import NotificationsPage from "../screens/Notifications";
 
 
 // screen names
-const homeName = "PostFeed";
+const homeName = "Home";
 const chatName = "Chat";
 const profileName = "Profile";
 const notificationsName = "Notifications";
-<<<<<<< HEAD
-=======
-
->>>>>>> 2e49eb3f37cb984fa3069accefdda71ae482a757
 
 const Tabs = createBottomTabNavigator();
 
@@ -44,10 +40,6 @@ export default function BottomTapBar() {
               return (
                 <Ionicons name={iconName} size={size} color={color}></Ionicons>
               );
-<<<<<<< HEAD
-=======
-            
->>>>>>> 2e49eb3f37cb984fa3069accefdda71ae482a757
             } else if (routeName === profileName) {
               iconName = focused ? "user" : "user-o";
               return (
