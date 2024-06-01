@@ -19,3 +19,6 @@ npm install @react-native-vector-icons
 npx expo prebuild 
 <!-- for  installing CocoaPods depencies of ios  -->
 npx pod-install ios
+
+<!--  instal moment.js for time -->
+npm install moment --save

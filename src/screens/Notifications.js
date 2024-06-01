@@ -1,6 +1,6 @@
 import *  as React from "react";
 import {View, Text, StyleSheet,Image, FlatList, SafeAreaView, TouchableOpacity} from "react-native";
-import { naturalColor, primaryColor, secondaryColor } from "../config/Config";
+import { naturalColor, primaryColor } from "../config/Config";
 
 import moment from 'moment'
 
