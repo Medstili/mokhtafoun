@@ -5,7 +5,7 @@ export default function Login({navigation}) {
   return (
     <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
       <Text>Login</Text>
-      <TouchableOpacity onPress={()=>navigation.navigate("PostFeed")}>
+      <TouchableOpacity onPress={()=>navigation.navigate("Home")}>
         <Text>Next</Text>
       </TouchableOpacity>
     </View>

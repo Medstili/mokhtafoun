@@ -23,7 +23,7 @@ export default function AppNavigation() {
         <stack.Screen name={"Forgot Password"} component={ForgotPassword} />
         <stack.Screen name={"AddPost"} component={AddPost} />
         <stack.Screen name={"Profile"} component={ProfilePage} />
-        <stack.Screen name={"PostFeed"} component={BottomNavigation} />
+        <stack.Screen name={"Home"} component={BottomNavigation} />
       </stack.Navigator>
     </NavigationContainer>
   );

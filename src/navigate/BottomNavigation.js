@@ -14,14 +14,14 @@ import {
 import {primaryColor } from "../config/Config";
 
 // importing the pages
-import PostFeed from "../screens/PostFeed";
+import Home from '../screens/Home'
 import ChatPage from "../screens/Chat";
 import ProfilePage from "../screens/Profile";
 import NotificationsPage from "../screens/Notifications";
 
 
 // screen names
-const homeName = "PostFeed";
+const homeName = "Home";
 const chatName = "Chat";
 const profileName = "Profile";
 const notificationsName = "Notifications";
@@ -82,7 +82,7 @@ export default function BottomTapBar() {
 
         })}
       >
-        <Tabs.Screen name={homeName} component={PostFeed} />
+        <Tabs.Screen name={homeName} component={Home} />
         <Tabs.Screen name={chatName} component={ChatPage} />
         <Tabs.Screen name={notificationsName} component={NotificationsPage} />
         <Tabs.Screen name={profileName} component={ProfilePage}/>
