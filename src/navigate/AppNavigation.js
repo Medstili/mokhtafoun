@@ -31,7 +31,15 @@ export default function AppNavigation() {
         <stack.Screen name={"Login"} component={Login} />
         <stack.Screen name={"SignUp"} component={SignUp} />
         <stack.Screen name={"Forgot Password"} component={ForgotPassword} />
+<<<<<<< HEAD
         <stack.Screen name={"AddPost"} component={AddPost}/>
+=======
+<<<<<<< HEAD
+        <stack.Screen name={"AddPost"} component={AddPost} />
+        <stack.Screen name={"Profile"} component={ProfilePage} />
+        <stack.Screen name={"Home"} component={BottomNavigation} />
+=======
+>>>>>>> c0e4d2213e7ab0d7d735d969f5cc1e8b3da66c9a
         <stack.Screen 
         options={{
           headerShown: true,
@@ -53,6 +61,7 @@ export default function AppNavigation() {
 
 
 
+>>>>>>> 368f1d23e5abc93c2b81290ad6afe4683e073203
       </stack.Navigator>
     </NavigationContainer>
   );

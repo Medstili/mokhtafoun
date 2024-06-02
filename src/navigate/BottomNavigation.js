@@ -10,7 +10,11 @@ import {
 // importing the colors
 import {primaryColor } from "../config/Config";
 // importing the pages
+<<<<<<< HEAD
+import Home from '../screens/Home'
+=======
 import PostFeed from "../screens/Home";
+>>>>>>> 368f1d23e5abc93c2b81290ad6afe4683e073203
 import ChatPage from "../screens/Chat";
 import ProfilePage from "../screens/Profile";
 import NotificationsPage from "../screens/Notifications";
@@ -75,7 +79,7 @@ export default function BottomTapBar() {
          )
         })}
       >
-        <Tabs.Screen name={homeName} component={PostFeed} />
+        <Tabs.Screen name={homeName} component={Home} />
         <Tabs.Screen name={chatName} component={ChatPage} />
         <Tabs.Screen name={notificationsName} component={NotificationsPage} />
         <Tabs.Screen name={profileName} component={ProfilePage}/>
