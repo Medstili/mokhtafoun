@@ -8,6 +8,8 @@ import SignUp from "../screens/auth/SignUp";
 import ForgotPassword from "../screens/auth/ForgotPassword";
 import Welcome from '../screens/Welcome';
 import Members from "../screens/Members"
+import AddPost from "../screens/AddPost";
+
 
 // importing the bottom bar  navigation 
 import BottomNavigation from "./BottomNavigation";
@@ -29,6 +31,7 @@ export default function AppNavigation() {
         <stack.Screen name={"Login"} component={Login} />
         <stack.Screen name={"SignUp"} component={SignUp} />
         <stack.Screen name={"Forgot Password"} component={ForgotPassword} />
+        <stack.Screen name={"AddPost"} component={AddPost}/>
         <stack.Screen 
         options={{
           headerShown: true,

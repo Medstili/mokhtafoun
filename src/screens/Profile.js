@@ -1,19 +1,63 @@
 import React from "react";
-import { StyleSheet, Text, View , ImageBackground, TouchableOpacity, ScrollView,SafeAreaView} from 'react-native';
+import { StyleSheet, Text, View , ImageBackground, TouchableOpacity, ScrollView,SafeAreaView, FlatList} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome' ; 
-import {  secondaryColor, naturalColor } from "../config/Config";
+import {  secondaryColor, naturalColor, succesColor } from "../config/Config";
+import PostCard from "../components/postCard";
 
+ let postData =[
+  {
+    poster:"mohamed stili",
+    description:"description_1",
+    date:"22/22/22",
+    postSource:require("../../images/PostImg/profil1.jpg"),
+    profileSource:require("../../images/PostImg/profil2.jpg"),
+    id:"#abcd"
+  },
+  {
+    poster:"mohamed stili",
+    description:"description_2",
+    date:"22/22/23",
+    postSource:require("../../images/PostImg/profil3.jpg"),
+    profileSource:require("../../images/PostImg/profil4.jpg"),
+    id:"#ab12"
 
+  },
+  {
+    poster:"mohamed stili",
+    description:"description_3",
+    date:"22/22/24",
+    postSource:require("../../images/PostImg/profil5.jpg"),
+    profileSource:require("../../images/PostImg/profil6.jpg"),
+    id:"#abc67"
 
+  },
+  {
+    poster:"mohamed stili",
+    description:"description_4",
+    date:"22/22/25",
+    postSource:require("../../images/PostImg/profil7.jpg"),
+    profileSource:require("../../images/PostImg/profil8.jpg"),
+    id:"#a12f"
+  },
+  
+ ]
 
 export default function ProfilePage({navigation}) {
-  
+
+  const renderItems=({item})=>{
+    return <PostCard 
+    Poster={item.poster}
+    Description={item.description}
+    Date={item.date}
+    ProfileSource={item.profileSource}
+    PostSource={item.postSource}
+    />
+  }
+
   return (
     <SafeAreaView style={styles.global_container}>
-
     {/* container */}
     <ScrollView contentContainerStyle={styles.page_container}>
-
     {/* user card */}
     <View style={styles.user_card}>
     {/*  user info */}
@@ -21,7 +65,7 @@ export default function ProfilePage({navigation}) {
 
     {/* img container */}
       <View style={[styles.user_img_container]}>
-    <ImageBackground source={require('../../images/profile.jpg')} style={styles.user_img}></ImageBackground>
+    <ImageBackground source={require('../../images/PostImg/profil7.jpg')} style={styles.user_img}></ImageBackground>
       </View>
 
     {/* user info */}
@@ -60,21 +104,20 @@ export default function ProfilePage({navigation}) {
       </View>
       </View>
     </View>
-
     {/* family members */}
     <View style={styles.family_members_container}>
 
     <View style={styles.family_members} >
       <View  style={styles.member}>
-        <ImageBackground style={styles.member_img} source={require('../../images/member.jpg')}></ImageBackground>
+        <ImageBackground style={styles.member_img} source={require('../../images/PostImg/profil9.jpg')}></ImageBackground>
       </View>
 
       <View  style={styles.member}>
-        <ImageBackground  style={styles.member_img}source={require('../../images/member.jpg')}></ImageBackground>
+        <ImageBackground  style={styles.member_img}source={require('../../images/PostImg/profil8.jpg')}></ImageBackground>
       </View>
 
       <View  style={styles.member}>
-        <ImageBackground  style={styles.member_img}source={require('../../images/member.jpg')}></ImageBackground>
+        <ImageBackground  style={styles.member_img}source={require('../../images/PostImg/profil3.jpg')}></ImageBackground>
       </View>
 
       </View>
@@ -87,6 +130,14 @@ export default function ProfilePage({navigation}) {
 
     </View>
 
+    <View style={styles.posts}>
+     <FlatList
+     contentContainerStyle={styles.flatList}
+     data={postData}
+     keyExtractor={(item)=>{item.id}}
+     renderItem={renderItems}
+     />
+    </View>
     </ScrollView>
 
     </SafeAreaView>
@@ -220,5 +271,14 @@ const styles = StyleSheet.create({
     justifyContent:"center",
     alignItems:"center",
   },
+  posts:{
+    width:414,
+    marginTop:40,
+    flexDirection:"column",
+  },
+  flatList:{
+    width:"100%",
+    backgroundColor:"green"
+  }
   
 });

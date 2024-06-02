@@ -8,7 +8,7 @@ import moment from 'moment'
 import { Entypo } from '@expo/vector-icons';
 
 // CREATE DATA FOR NOTIFICATION
-notificationData = [
+ const notificationData = [
 
     {
         id:1,

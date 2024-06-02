@@ -6,12 +6,12 @@ import { complementary,  primaryColor,} from '../config/Config';
 
 
 export default function MemberCard(props) {
-    const {source, Name, Status, }=props
+    const {Source, Name, Status, }=props
   return (
 <TouchableOpacity style={styles.member}>
 
     <View  style={styles.member_img_conainer}>
-         <ImageBackground style={styles.member_img} source={require("../../images/member.jpg")}></ImageBackground>
+         <ImageBackground style={styles.member_img} source={Source}></ImageBackground>
     </View>
 
     <View style={styles.member_status_container}>

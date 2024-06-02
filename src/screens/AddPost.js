@@ -1,8 +1,6 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput} from 'react-native'
 import React from 'react'
 import { naturalColor, primaryColor, secondaryColor } from '../config/Config'
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { NavigationContainer } from '@react-navigation/native';
 
 import { Feather } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
