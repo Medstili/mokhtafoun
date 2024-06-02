@@ -11,14 +11,14 @@ import {
 import {primaryColor } from "../config/Config";
 // importing the pages
 import Home from '../screens/Home'
-import ChatPage from "../screens/Chat";
+import Messages from "../screens/Messages";
 import ProfilePage from "../screens/Profile";
 import NotificationsPage from "../screens/Notifications";
 
 
 // screen names
 const homeName = "Home";
-const chatName = "Chat";
+const MessagesName = "Messages";
 const profileName = "Profile";
 const notificationsName = "Notifications";
 
@@ -33,7 +33,7 @@ export default function BottomTapBar() {
             let routeName = route.name;
             if (routeName === homeName) {
               iconName = focused ? "home" : "home-outline";
-            } else if (routeName === chatName) {
+            } else if (routeName === MessagesName) {
               iconName = focused ? "message" : "message-outline";
             } else if (routeName === notificationsName) {
               iconName = focused ? "notifications" : "notifications-outline";
@@ -50,7 +50,6 @@ export default function BottomTapBar() {
                 ></FontAwesome>
               );
             }
-            
               return (
               <MaterialCommunityIcons
                 name={iconName}
@@ -77,7 +76,7 @@ export default function BottomTapBar() {
         })}
       >
         <Tabs.Screen name={homeName} component={Home} />
-        <Tabs.Screen name={chatName} component={ChatPage} />
+        <Tabs.Screen name={MessagesName} component={Messages} />
         <Tabs.Screen name={notificationsName} component={NotificationsPage} />
         <Tabs.Screen name={profileName} component={ProfilePage}/>
       </Tabs.Navigator>

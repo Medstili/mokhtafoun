@@ -15,7 +15,7 @@ const membersArr =[
     {
         name:"Youssef",
         status:"Safe",
-        source: require("../../images/PostImg/profil7.jpg"),
+        source: require("../../images/PostImg/profil8.jpg"),
         id:"1b"
     },
     {
@@ -63,8 +63,8 @@ export default function Members() {
     // filtering the data based on the user input 
     const result = membersArr.filter((member)=> member.name.toLowerCase().includes(input.toLowerCase() ))
     console.log(result);
-        // rendering the iems 
-    const renderItems=({item})=>{return <MemberCard source={'../../images/member.jpg'} Name={item.name} Status={item.status} Source={item.source}/>}
+    // rendering the iems 
+    const renderItems=({item})=>{return <MemberCard  Name={item.name} Status={item.status} Source={item.source}/>}
 
   return (
         <SafeAreaView style={{flex:1,}}>
@@ -72,7 +72,7 @@ export default function Members() {
         
         {/* search bar */}
             <View style={styles.searchBar}>
-                <Icon name='search' size={24} color="gray"></Icon>
+                <Icon name='search' size={24} color="gray"/>
                 <TextInput
                 placeholder='search here'
                 value={input} 

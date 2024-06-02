@@ -12,7 +12,7 @@ import AddPost from "../screens/AddPost";
 import ProfilePage from "../screens/Profile";
 // importing the bottom bar  navigation 
 import BottomNavigation from "./BottomNavigation";
-
+// imorting the colors 
 import { primaryColor } from "../config/Config";
 
 

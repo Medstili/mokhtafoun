@@ -1,8 +1,8 @@
 
 import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native'
-import { naturalColor, primaryColor, secondaryColor, } from '../config/Config'
-import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
+import { naturalColor, primaryColor} from '../config/Config'
+import { FontAwesome, FontAwesome5, Entypo } from '@expo/vector-icons';
 
 
 
@@ -24,7 +24,7 @@ export default function PostCard(props) {
                 </View>
               </View>
               <TouchableOpacity>
-                <FontAwesome name="ellipsis-h" size={24} color={primaryColor}/>
+                <Entypo name="dots-three-horizontal" size={20} color={primaryColor}/>
                 </TouchableOpacity>
             </View>
             <View style={styles.post_container}>
@@ -113,12 +113,16 @@ const styles = StyleSheet.create({
     resizeMode:"center",
   },
   post_Buttons:{
-    width:350,
+    width:"100%",
+    height:50,
     flexDirection:"row",
-    justifyContent:"space-between",
+    justifyContent:"space-around",
     alignItems:"center",
     marginTop:20,
-    paddingBottom:5
+    paddingBottom:5,
+    borderTopWidth:2,
+    borderBottomWidth:2,
+    borderColor:"#bbbdbb"
   },
   Buttons:{
     alignItems:"center",

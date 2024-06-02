@@ -10,7 +10,7 @@ import PostCard from "../components/postCard";
     description:"description_1",
     date:"22/22/22",
     postSource:require("../../images/PostImg/profil1.jpg"),
-    profileSource:require("../../images/PostImg/profil2.jpg"),
+    profileSource:require("../../images/PostImg/profil7.jpg"),
     id:"#abcd"
   },
   {
@@ -18,7 +18,7 @@ import PostCard from "../components/postCard";
     description:"description_2",
     date:"22/22/23",
     postSource:require("../../images/PostImg/profil3.jpg"),
-    profileSource:require("../../images/PostImg/profil4.jpg"),
+    profileSource:require("../../images/PostImg/profil7.jpg"),
     id:"#ab12"
 
   },
@@ -27,7 +27,7 @@ import PostCard from "../components/postCard";
     description:"description_3",
     date:"22/22/24",
     postSource:require("../../images/PostImg/profil5.jpg"),
-    profileSource:require("../../images/PostImg/profil6.jpg"),
+    profileSource:require("../../images/PostImg/profil7.jpg"),
     id:"#abc67"
 
   },
@@ -35,8 +35,8 @@ import PostCard from "../components/postCard";
     poster:"mohamed stili",
     description:"description_4",
     date:"22/22/25",
-    postSource:require("../../images/PostImg/profil7.jpg"),
-    profileSource:require("../../images/PostImg/profil8.jpg"),
+    postSource:require("../../images/PostImg/profil8.jpg"),
+    profileSource:require("../../images/PostImg/profil7.jpg"),
     id:"#a12f"
   },
   
