@@ -77,9 +77,9 @@ const styles = StyleSheet.create({
   },
   poster_info:{
     flexDirection:"row",
-    justifyContent:"space-between",
+    justifyContent:"space-around",
     alignItems:"center",
-    width:180,
+    width:160,
   },
   poster_img:{
     width:60,
@@ -112,7 +112,6 @@ const styles = StyleSheet.create({
     height:300, 
     resizeMode:"center",
   },
-
   post_Buttons:{
     width:350,
     flexDirection:"row",

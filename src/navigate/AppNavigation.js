@@ -9,10 +9,10 @@ import ForgotPassword from "../screens/auth/ForgotPassword";
 import Welcome from '../screens/Welcome';
 import Members from "../screens/Members"
 import AddPost from "../screens/AddPost";
-
-
+import ProfilePage from "../screens/Profile";
 // importing the bottom bar  navigation 
 import BottomNavigation from "./BottomNavigation";
+
 import { primaryColor } from "../config/Config";
 
 
@@ -33,7 +33,6 @@ export default function AppNavigation() {
         <stack.Screen name={"Forgot Password"} component={ForgotPassword} />
         <stack.Screen name={"AddPost"} component={AddPost} />
         <stack.Screen name={"Profile"} component={ProfilePage} />
-        <stack.Screen name={"Home"} component={BottomNavigation} />
         <stack.Screen 
         options={{
           headerShown: true,
@@ -49,7 +48,6 @@ export default function AppNavigation() {
 
         }}
         name={"Members"} component={Members} />
-        
       {/* merging the bottomNavigation with home screen  */}
         <stack.Screen name={"Home"} component={BottomNavigation} />
 

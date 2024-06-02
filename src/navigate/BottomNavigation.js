@@ -10,11 +10,7 @@ import {
 // importing the colors
 import {primaryColor } from "../config/Config";
 // importing the pages
-<<<<<<< HEAD
 import Home from '../screens/Home'
-=======
-import PostFeed from "../screens/Home";
->>>>>>> 368f1d23e5abc93c2b81290ad6afe4683e073203
 import ChatPage from "../screens/Chat";
 import ProfilePage from "../screens/Profile";
 import NotificationsPage from "../screens/Notifications";
@@ -54,13 +50,14 @@ export default function BottomTapBar() {
                 ></FontAwesome>
               );
             }
-            return (
+            
+              return (
               <MaterialCommunityIcons
                 name={iconName}
                 size={size}
                 color={color}
               ></MaterialCommunityIcons>
-            );
+              );
           },
           tabBarActiveTintColor: primaryColor,
           tabBarInactiveTintColor: "gray",
