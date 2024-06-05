@@ -60,6 +60,6 @@ const styles = StyleSheet.create({
     },
     Button:{
         color:"white",
-        fontSize:"20",
+        fontSize:20,
     }
 })

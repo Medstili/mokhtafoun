@@ -10,6 +10,10 @@ import Welcome from '../screens/Welcome';
 import Members from "../screens/Members"
 import AddPost from "../screens/AddPost";
 import ProfilePage from "../screens/Profile";
+import WebViewScreen from '../navigate/WebViewScreen';
+import SignUp2 from '../screens/auth/SignUp2';
+import ConfigPassword from '../screens/auth/ConfigPassword';
+import NewPassword from '../screens/auth/NewPassword';
 // importing the bottom bar  navigation 
 import BottomNavigation from "./BottomNavigation";
 // imorting the colors 
@@ -23,7 +27,7 @@ export default function AppNavigation() {
     <NavigationContainer>
       <stack.Navigator 
       //  making teh welcome screen be the first pages displayed to the user
-      initialRouteName="Home"
+      initialRouteName="Welcome"
       // hiding the header in this screens (welcome,login,sign up, forgot password)
       screenOptions={({ route }) => ({headerShown:false})}>
 
@@ -33,6 +37,8 @@ export default function AppNavigation() {
         <stack.Screen name={"Forgot Password"} component={ForgotPassword} />
         <stack.Screen name={"AddPost"} component={AddPost} />
         <stack.Screen name={"Profile"} component={ProfilePage} />
+        <stack.Screen name="ConfigPassword" component={ConfigPassword} options={{headerShown: false}}/>
+        <stack.Screen name="NewPassword" component={NewPassword} options={{headerShown: false}}/>
         <stack.Screen 
         options={{
           headerShown: true,
@@ -50,7 +56,8 @@ export default function AppNavigation() {
         name={"Members"} component={Members} />
       {/* merging the bottomNavigation with home screen  */}
         <stack.Screen name={"Home"} component={BottomNavigation} />
-
+        <stack.Screen name="WebViewScreen" component={WebViewScreen} options={{headerShown: false}}/>
+        <stack.Screen name="SignUp2" component={SignUp2} options={{headerShown: false}}/>
       </stack.Navigator>
     </NavigationContainer>
   );

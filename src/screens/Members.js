@@ -95,7 +95,7 @@ export default function Members() {
                 />
 
                 <TouchableOpacity  style={{width:"100%",height:90, alignItems:"center",paddingTop:10, backgroundColor:secondaryColor}}>
-                        <Text style={{fontSize:"34", fontWeight:"bold", color:"white",justifyContent:"center"}}>Add</Text>
+                        <Text style={{fontSize:34, fontWeight:"bold", color:"white",justifyContent:"center"}}>Add</Text>
                 </TouchableOpacity>
 
             </View>

@@ -22,3 +22,9 @@ npx pod-install ios
 
 <!--  instal moment.js for time -->
 npm install moment --save
+
+<!-- instal datetimepiker -->
+npm install @react-native-community/datetimepicker
+
+<!-- install CocoaPods of android -->
+npx react-native run-android

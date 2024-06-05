@@ -1,15 +1,16 @@
-import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image} from "react-native";
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image } from "react-native";
 import React, { useState } from 'react';
 import { primaryColor } from "../../config/Config";
 import DateTimePicker from '@react-native-community/datetimepicker';
 
-export default function SignUp({navigation}) {
+export default function RegisterPage2({navigation}) {
     const [username, setUsername] = useState('');
     const [lastname, setLastname] = useState('');
     const [email, setEmail] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [city, setCity] = useState('');
     const [password, setPassword] = useState('');
+    const [configpassword, setconfigpassword] = useState('');
     const [date, setDate] = useState(new Date());
     const [show, setShow] = useState(false);
 
@@ -21,53 +22,63 @@ export default function SignUp({navigation}) {
 
     return (
         <View style={s.container}>
-            <Image source={require("../../../images/logo/logo.png")} style={{ width: '50%', height: 150,  }} />
+            <Image source={require("../../../images/logo/logo.png")} style={{ width: '50%', height: 150, marginTop:20,  }} />
             <Text style={s.title}>Sign up</Text>
             <View style={s.inputView}>
                 <TextInput 
                     style={s.input} 
-                    placeholder='First name' 
-                    value={username} 
-                    onChangeText={(value) => setUsername(value)} 
+                    placeholder='Email' 
+                    value={email} 
+                    onChangeText={setEmail} 
+                    autoCorrect={false}
+                    autoCapitalize='none' 
+                    keyboardType="email-address"
+                />
+                <TextInput 
+                    style={s.input} 
+                    placeholder='Phone number' 
+                    value={phoneNumber} 
+                    onChangeText={setPhoneNumber} 
+                    autoCorrect={false}  
+                    autoCapitalize='none'
+                    keyboardType="phone-pad"
+                />
+                <TextInput 
+                    style={s.input} 
+                    placeholder='City' 
+                    value={city} 
+                    onChangeText={setCity} 
                     autoCorrect={false}
                     autoCapitalize='none' 
                 />
                 <TextInput 
                     style={s.input} 
-                    placeholder='Last name' 
-                    value={lastname} 
-                    onChangeText={setLastname} 
+                    placeholder='Password' 
+                    secureTextEntry 
+                    value={password} 
+                    onChangeText={setPassword} 
                     autoCorrect={false}
                     autoCapitalize='none' 
                 />
-                <TouchableOpacity onPress={() => setShow(true)}>
-                    <TextInput
-                        style={s.input}
-                        placeholder='Date of Birth'
-                        value={date.toDateString()}
-                        editable={false}
-                    />
-                </TouchableOpacity>
-                {show && (
-                    <DateTimePicker
-                        testID="dateTimePicker"
-                        value={date}
-                        mode="date"
-                        display="default"
-                        onChange={handleChange}
-                    />
-                )}
+                <TextInput 
+                    style={s.input} 
+                    placeholder='Confirm Password' 
+                    secureTextEntry 
+                    value={configpassword} 
+                    onChangeText={setconfigpassword}  
+                    autoCorrect={false} 
+                    autoCapitalize='none' 
+                />
             </View>
             <View style={{flexDirection:'row', marginTop:30,gap:15,}}>
-            <TouchableOpacity onPress={() => navigation.navigate('Welcome')} style={s.btnreturn} >
+            <TouchableOpacity onPress={() => navigation.navigate('SignUp')} style={s.btnreturn} >
                 <Text style={{ color: '#fff', textAlign: 'center', fontSize: 25, }}>Return</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('SignUp2')} style={s.btnsingup} >
-                <Text style={{ color:primaryColor, textAlign: 'center', fontSize: 25, }}>Next</Text>
+            <TouchableOpacity onPress={() => navigation.navigate('Home')} style={s.btnsingup} >
+                <Text style={{ color:primaryColor, textAlign: 'center', fontSize: 25, }}>Sign up</Text>
             </TouchableOpacity>
             </View>
         </View>
-        
     );
 }
 
@@ -76,13 +87,13 @@ const s = StyleSheet.create({
         alignItems: "center",
         justifyContent: 'center',
         flex:1,
-    },
+        },
     title: {
         fontSize: 30,
         fontWeight: "bold",
         textTransform: "uppercase",
         textAlign: "center",
-        paddingVertical: 35,
+        paddingVertical: 15,
         color: primaryColor,
     },
     inputView: {
