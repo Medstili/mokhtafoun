@@ -1,6 +1,8 @@
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from "react";
+import { TouchableOpacity, View,Image,Text } from "react-native";
+import {Entypo,Ionicons} from 'react-native-vector-icons';
 
 // importing the screen tha we want to navigate to 
 import Login from "../screens/auth/Login";
@@ -10,6 +12,7 @@ import Welcome from '../screens/Welcome';
 import Members from "../screens/Members"
 import AddPost from "../screens/AddPost";
 import ProfilePage from "../screens/Profile";
+import ChatPage from "../screens/Chat";
 // importing the bottom bar  navigation 
 import BottomNavigation from "./BottomNavigation";
 // imorting the colors 
@@ -33,6 +36,96 @@ export default function AppNavigation() {
         <stack.Screen name={"Forgot Password"} component={ForgotPassword} />
         <stack.Screen name={"AddPost"} component={AddPost} />
         <stack.Screen name={"Profile"} component={ProfilePage} />
+
+        <stack.Screen
+         options={({route})=>({
+          headerShown: true,
+          title:'',
+          headerStyle: {
+            backgroundColor: primaryColor,
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+          headerBackTitle: 'Back',
+          headerRight:()=>(
+            <View style={{
+              width:90,
+              justifyContent:"space-between",
+              alignItems:"center",
+              flexDirection:"row"
+              }} >
+             <TouchableOpacity style={{
+              width:40,
+              height:40,
+              justifyContent:"center",
+              alignItems:"center"
+              }}>
+               <Entypo name="video-camera" color="white" size="24"/>
+             </TouchableOpacity>
+            <TouchableOpacity style={{
+              width:40,
+              height:40,
+              justifyContent:"center",
+              alignItems:"center"}}>
+              <Entypo name="phone" color="white" size="24"/>
+            </TouchableOpacity> 
+             </View>
+           ),
+           headerLeft:()=>{
+            const navigation = useNavigation()
+            return(
+            <View style={{
+              flexDirection:"row",
+              width:270,
+              justifyContent:"space-between",
+              alignItems:"center",
+              }}>
+
+               <TouchableOpacity style={{width:50}} onPress={()=>{navigation.goBack()}}>
+                <Ionicons name="chevron-back" size={24} color="white"/>
+                </TouchableOpacity>
+
+              <TouchableOpacity style={{
+                width:230,
+                flexDirection:"row",
+                justifyContent:"flex-start",
+                alignItems:"center",
+                }}>
+
+                <View style={{
+                width:35,
+                height:35,
+                borderRadius:50,
+                overflow:"hidden"}}>
+                <Image style={{
+                width:35,
+                height:35,
+                }}
+                source={route.params.userImg}/>
+                </View>
+
+                <View>
+                  <Text style={{
+                    color:"white",
+                    fontSize:17,
+                    fontWeight:"bold",
+                    textTransform:"capitalize",
+                    marginLeft:10
+                    }}>
+                      {route.params.userName}
+                  </Text>
+                </View>
+
+              </TouchableOpacity>
+            </View>
+                )
+                  }
+        })} 
+           
+        name={"Chat"} component={ChatPage}/>
+
         <stack.Screen 
         options={{
           headerShown: true,
@@ -45,9 +138,9 @@ export default function AppNavigation() {
             fontWeight: 'bold',
           },
           headerBackTitle: 'Back',
-
         }}
         name={"Members"} component={Members} />
+        
       {/* merging the bottomNavigation with home screen  */}
         <stack.Screen name={"Home"} component={BottomNavigation} />
 

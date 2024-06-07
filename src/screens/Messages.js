@@ -43,12 +43,20 @@ const messageData =[
 
 ]
 
-export default function MessagePage() {
+export default function MessagePage({navigation}) {
 
     const [input, setInput]= useState("");
     const result = messageData.filter((msg)=> msg.sender.toLowerCase().includes(input.toLowerCase()))
-    console.log(result);
-    const renderItems=({item})=>{return <MessagesCard SenderImage={item.imgSource} Name={item.sender} Message={item.msg} Timer={item}/>}
+    // console.log(result);
+    const renderItems=({item})=>{
+        return <MessagesCard 
+        SenderImage={item.imgSource}
+        Name={item.sender}
+        Message={item.msg} 
+        Timer={item} 
+        OnPress={()=>{navigation.navigate("Chat", {userName:item.sender,userImg:item.imgSource,navigate:navigation})}}
+        item={item}
+        />}
 
     return(
             <View style={styles.container}>
@@ -109,4 +117,4 @@ export default function MessagePage() {
         msgList:{
             width:414,
         }
-    })
+    })  

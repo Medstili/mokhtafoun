@@ -22,3 +22,15 @@ npx pod-install ios
 
 <!--  instal moment.js for time -->
 npm install moment --save
+
+<!-- instaal giftedChat for chat UI and additional dependencies -->
+npm install react-native-gifted-chat
+npm install react-native-reanimated react-native-gesture-handler
+
+<!-- install this if you have a react native version older than 0.60 to link the libraries manually. -->
+npx react-native link react-native-reanimated
+npx react-native link react-native-gesture-handler
+
+<!-- for opening the iphone image library  -->
+npm install react-native-image-picker
+

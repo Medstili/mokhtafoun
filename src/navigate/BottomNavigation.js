@@ -14,6 +14,8 @@ import Home from '../screens/Home'
 import Messages from "../screens/Messages";
 import ProfilePage from "../screens/Profile";
 import NotificationsPage from "../screens/Notifications";
+import ReelsPage from "../screens/Reels";
+import Reels from "../screens/Reels";
 
 
 // screen names
@@ -21,6 +23,7 @@ const homeName = "Home";
 const MessagesName = "Messages";
 const profileName = "Profile";
 const notificationsName = "Notifications";
+const ReelsName ="Reels"
 
 const Tabs = createBottomTabNavigator();
 
@@ -49,6 +52,8 @@ export default function BottomTapBar() {
                   color={color}
                 ></FontAwesome>
               );
+            } else if (routeName === ReelsName){
+              iconName = focused ? "play-box-multiple" : "play-box-multiple-outline";
             }
               return (
               <MaterialCommunityIcons
@@ -77,6 +82,7 @@ export default function BottomTapBar() {
       >
         <Tabs.Screen name={homeName} component={Home} />
         <Tabs.Screen name={MessagesName} component={Messages} />
+        <Tabs.Screen name={ReelsName} component={Reels} />
         <Tabs.Screen name={notificationsName} component={NotificationsPage} />
         <Tabs.Screen name={profileName} component={ProfilePage}/>
       </Tabs.Navigator>

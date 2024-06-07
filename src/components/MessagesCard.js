@@ -7,9 +7,9 @@ import {primaryColor} from "../config/Config"
 
 export default function MessagesCard(porps) {
 
-    const {Message, SenderImage, Name, Timer,}=porps
+    const {Message, SenderImage, Name, Timer, OnPress}=porps
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={OnPress}>
         <View style={styles.userImgConmtainer}>
             <Image style={styles.userImg} source={SenderImage}/>
         </View>
