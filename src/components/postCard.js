@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
   poster_img:{
     width:60,
     height:60,
-    borderRadius:"50%",
+    borderRadius:50,
     backgroundColor:"grey",
     overflow:"hidden",
   },
@@ -104,7 +104,6 @@ const styles = StyleSheet.create({
   },
   post_img_container:{
     width:"100%",
-
     marginTop:20
   },
   postImg:{

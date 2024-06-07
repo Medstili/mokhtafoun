@@ -14,7 +14,6 @@ import Home from '../screens/Home'
 import Messages from "../screens/Messages";
 import ProfilePage from "../screens/Profile";
 import NotificationsPage from "../screens/Notifications";
-import ReelsPage from "../screens/Reels";
 import Reels from "../screens/Reels";
 
 
