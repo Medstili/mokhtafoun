@@ -1,7 +1,8 @@
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image } from "react-native";
 import React, { useState } from 'react';
 import { primaryColor } from "../../config/Config";
-export default function newPassword({navigation}) {
+
+export default function NewPassword({navigation}) {
     const [password, setPassword] = useState('');
     const [configpassword, setconfigpassword] = useState('');
 
