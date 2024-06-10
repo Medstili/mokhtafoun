@@ -1,28 +1,38 @@
-import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image, email, setEmail } from "react-native";
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image } from "react-native";
 import React, { useState } from 'react';
 import { primaryColor } from "../../config/Config";
-
-export default function ForgotPassword({navigation}) {
+export default function newPassword({navigation}) {
+    const [password, setPassword] = useState('');
+    const [configpassword, setconfigpassword] = useState('');
 
     return (
         <View style={s.container}>
             <Image source={require("../../../images/logo/logo.png")} style={{ width: '50%', height: 150, marginTop:20,  }} />
-            <Text style={s.title}>Forgot Password</Text>
+            <Text style={s.title}>New Password</Text>
             <View style={s.inputView}>
                 <TextInput 
                     style={s.input} 
-                    placeholder='Enter Your Email' 
-                    value={email} 
-                    onChangeText={setEmail} 
+                    placeholder='New Password' 
+                    secureTextEntry 
+                    value={password} 
+                    onChangeText={setPassword} 
                     autoCorrect={false}
                     autoCapitalize='none' 
-                    keyboardType="email-address"
+                />
+                <TextInput 
+                    style={s.input} 
+                    placeholder='Confirm the new Password' 
+                    secureTextEntry 
+                    value={configpassword} 
+                    onChangeText={setconfigpassword}  
+                    autoCorrect={false} 
+                    autoCapitalize='none' 
                 />
             </View>
-            <TouchableOpacity onPress={() => navigation.navigate('ConfigPassword')} style={s.btnsingup} >
-                <Text style={{ color:'#ffffff', textAlign: 'center', fontSize: 25, }}>Send Code</Text>
+            <TouchableOpacity onPress={() => navigation.navigate('Home')} style={s.btnsingup} >
+                <Text style={{ color:'#ffffff', textAlign: 'center', fontSize: 25, }}>Done</Text>
             </TouchableOpacity>
-            </View>
+        </View>
     );
 }
 
@@ -52,11 +62,18 @@ const s = StyleSheet.create({
         paddingHorizontal: 20,
         borderColor: primaryColor,
         borderWidth: 1,
-        borderRadius: 7,
+        borderRadius: 7
     },
+    btnreturn: {
+        height: 50,
+        paddingHorizontal: 20,
+        borderColor: primaryColor,
+        borderWidth: 1,
+        borderRadius: 7,
+      },
 
       btnsingup:{
-        width: 160,
+        width: 100,
         height: 35,
         borderRadius: 15,
         margin:12,
