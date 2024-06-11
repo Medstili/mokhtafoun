@@ -16,7 +16,8 @@ import Welcome from '../screens/Welcome';
 import Members from "../screens/Members"
 import AddPost from "../screens/AddPost";
 import ProfilePage from "../screens/Profile";
-import ChatPage from "../screens/Chat"
+import ChatPage from "../screens/Chat";
+import Settings from "../screens/auth/Settings";
 // importing the bottom bar  navigation 
 import BottomNavigation from "./BottomNavigation";
 // imorting the colors 
@@ -39,6 +40,7 @@ export default function AppNavigation() {
         <stack.Screen name={"Forgot Password"} component={ForgotPassword} />
         <stack.Screen name={"AddPost"} component={AddPost} />
         <stack.Screen name={"Profile"} component={ProfilePage} />
+        <stack.Screen name={"Settings"} component={Settings} />
         <stack.Screen
          options={({route})=>({
           headerShown: true,
