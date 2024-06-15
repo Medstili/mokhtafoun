@@ -1,7 +1,7 @@
 import { SafeAreaView, StyleSheet, View, TouchableOpacity, Text} from 'react-native'
 import React,{useState, useEffect, useCallback} from 'react'
 import { Actions, Avatar, Bubble, GiftedChat, Send  } from 'react-native-gifted-chat'
-import {primaryColor} from '../config/Config'
+import {primaryColor, succesColor} from '../config/Config'
 import {FontAwesome,AntDesign} from 'react-native-vector-icons'
 import {launchImageLibrary , launchCamera} from 'react-native-image-picker'
 
@@ -125,7 +125,8 @@ export default function Chat() {
         marginBottom:10,
       },
       right:{
-        marginBottom:10
+        marginBottom:10,
+        backgroundColor:succesColor
       }
   } }/>
   )}

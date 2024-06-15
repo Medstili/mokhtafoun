@@ -13,8 +13,8 @@ export default function PostCard(props) {
           <View style={styles.container}>
             <View style={styles.poster_info_container}>
               <View style={styles.poster_info}>
-                <View style={styles.poster_img}>
-                <Image style={styles.profileImg} source={ProfileSource}/>
+                <View style={styles.poster_img_container}>
+                <Image style={styles.posterImg} source={ProfileSource}/>
                 </View>
                 <View style={styles.nameDate}>
                   <Text style={{textTransform:"capitalize", fontWeight:"bold"}}>
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     borderBottomWidth:4,
     borderBottomColor:naturalColor,
     backgroundColor:"white",
-    width:414,
+    width:"100%",
     flexDirection:"column",
     justifyContent:"center",
     alignItems:"center",
@@ -79,19 +79,19 @@ const styles = StyleSheet.create({
     flexDirection:"row",
     justifyContent:"space-around",
     alignItems:"center",
-    width:160,
+    width:"45%",
   },
-  poster_img:{
+  poster_img_container:{
     width:60,
     height:60,
     borderRadius:50,
     backgroundColor:"grey",
     overflow:"hidden",
   },
-  profileImg:{
+  posterImg:{
     width:"100%",
     height:"100%",
-    resizeMode: "cover",
+    resizeMode: "cover"
   },
   post_container:{
     width:"100%",

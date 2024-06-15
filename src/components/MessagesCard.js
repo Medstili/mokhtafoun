@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     userImgConmtainer:{
         width:60,
         height:60,
-        borderRadius:"50%",
+        borderRadius:50,
         backgroundColor:"grey",
         overflow:"hidden",
     },

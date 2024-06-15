@@ -1,8 +1,9 @@
 import { StyleSheet, View, SafeAreaView, TouchableOpacity, Text, TextInput, FlatList} from 'react-native';
 import React, { useState }  from 'react';
 import MemberCard from '../components/MemberCard';
-import {secondaryColor} from '../config/Config';
-import Icon from 'react-native-vector-icons/FontAwesome' ;
+import {naturalColor,  secondaryColor} from '../config/Config';
+import {FontAwesome } from 'react-native-vector-icons' ;
+import { GestureHandlerRootView} from 'react-native-gesture-handler';
 
 
 const membersArr =[
@@ -56,6 +57,7 @@ const membersArr =[
 
 
 export default function Members() {
+    
 
     // recieving user text input and stay the changes  up to date 
     const [input, setInput] = useState("")
@@ -68,39 +70,60 @@ export default function Members() {
 
   return (
         <SafeAreaView style={{flex:1,}}>
+            <GestureHandlerRootView>
+
             <View style={{flex:1, justifyContent:"space-between",alignItems:"center"}}>
-        
-        {/* search bar */}
-            <View style={styles.searchBar}>
-                <Icon name='search' size={24} color="gray"/>
-                <TextInput
-                placeholder='search here'
-                value={input} 
-                onChangeText={(e)=>{setInput(e)}}
-                style={{width:300,}}
-                />
+                {/* search bar */}
+                <View style={styles.topBar}>
+
+                        <View style={styles.searchBarContainer}>
+
+                            <FontAwesome name='search' size={24} color="gray"/>
+
+                            <TextInput
+                            placeholder='search here'
+                            value={input} 
+                            onChangeText={(e)=>{setInput(e)}}
+                            style={{width:200,}}
+                            />
+                        </View>
+               
+                         <TouchableOpacity  style={{
+                            width:"15%",
+                            height:30, 
+                            alignItems:"center",
+                            justifyContent:"center", 
+                            backgroundColor:secondaryColor,
+                            borderRadius:20
+                        }}> 
+                                <Text style={{
+                                    fontSize:20, 
+                                    fontWeight:"bold", 
+                                    color:"white",
+                                    justifyContent:"center"
+
+                                }}>Add</Text>
+                        </TouchableOpacity>
+
+                </View>
+
+                <View style={styles.member_container}>
+
+                    <FlatList 
+                        contentContainerStyle={styles.flatList}
+                        data={result}
+                        renderItem={renderItems}
+                        keyExtractor={(item)=>item.id}
+                        numColumns={2}
+                        columnWrapperStyle={{justifyContent:"space-between"}}
+                        ListEmptyComponent={<Text style={{width:"100%", textAlign:"center"}}>No members found</Text>}
+                    />
+
+                
+                </View>
             </View>
 
-
-            <View style={styles.member_container}>
-
-                <FlatList 
-                    contentContainerStyle={styles.flatList}
-                    data={result}
-                    renderItem={renderItems}
-                    keyExtractor={(item)=>item.id}
-                    numColumns={2}
-                    columnWrapperStyle={{justifyContent:"space-between"}}
-                    ListEmptyComponent={<Text style={{width:"100%", textAlign:"center"}}>No members found</Text>}
-                />
-
-                <TouchableOpacity  style={{width:"100%",height:90, alignItems:"center",paddingTop:10, backgroundColor:secondaryColor}}>
-                        <Text style={{fontSize:34, fontWeight:"bold", color:"white",justifyContent:"center"}}>Add</Text>
-                </TouchableOpacity>
-
-            </View>
-
-            </View>
+            </GestureHandlerRootView>
         </SafeAreaView>
   )
 }
@@ -119,15 +142,28 @@ const styles = StyleSheet.create({
         width:414,
         justifyContent:"center",
     },
-    searchBar:{
+    topBar:{
+        width:"100%",
+        height:"8%",
         flexDirection:"row",
-        width:350,
+        justifyContent:"space-around",
+        alignItems:"center",
+    },
+    searchBarContainer:{
+        flexDirection:"row",
+        width:250,
         backgroundColor:"white",
         alignItems:"center",
         justifyContent:"space-evenly",
         borderWidth:1,
         borderRadius:30,
-        marginTop:20,
         padding:8
+    },
+
+    button:{
+        flexDirection:"row",
+        backgroundColor:secondaryColor,
+        justifyContent:"center",
+        alignItems:"center"
     }
 })

@@ -1,6 +1,6 @@
-import { View, Text, StyleSheet, TextInput, username, setUsername, password, setPassword, TouchableOpacity, Switch, Pressable, Image, WebView } from "react-native";
+import { View, Text, StyleSheet, TextInput, username, setUsername, password, setPassword, TouchableOpacity, Switch, Pressable, Image } from "react-native";
 import React, { useState } from 'react';
-import {primaryColor, secondaryColor,naturalColor, complementatry, alertColor, succesColor} from "../../config/Config";
+import {primaryColor,  succesColor} from "../../config/Config";
 export default function Login({navigation}) {
     const [click, setClick] = useState(false)
     return (

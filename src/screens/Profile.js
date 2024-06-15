@@ -138,6 +138,7 @@ export default function ProfilePage({navigation}) {
      renderItem={renderItems}
      />
     </View>
+    
     </ScrollView>
 
     </SafeAreaView>
