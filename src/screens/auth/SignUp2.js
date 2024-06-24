@@ -22,7 +22,7 @@ export default function RegisterPage2({navigation}) {
 
     return (
         <View style={s.container}>
-            <Image source={require("../../../images/logo/logo.png")} style={{ width: '50%', height: 150, marginTop:20,  }} />
+            <Image source={require("../../../images/logo/logo3.png")} style={{ width: '100%', height: 150, marginTop:20,  }} />
             <Text style={s.title}>Sign up</Text>
             <View style={s.inputView}>
                 <TextInput 
@@ -74,7 +74,7 @@ export default function RegisterPage2({navigation}) {
             <TouchableOpacity onPress={() => navigation.navigate('SignUp')} style={s.btnreturn} >
                 <Text style={{ color: '#fff', textAlign: 'center', fontSize: 25, }}>Return</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('Home')} style={s.btnsingup} >
+            <TouchableOpacity onPress={() => navigation.navigate('BottomNavigation')} style={s.btnsingup} >
                 <Text style={{ color:primaryColor, textAlign: 'center', fontSize: 25, }}>Sign up</Text>
             </TouchableOpacity>
             </View>

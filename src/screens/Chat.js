@@ -1,4 +1,4 @@
-import { SafeAreaView, StyleSheet, View, TouchableOpacity, Text} from 'react-native'
+import { SafeAreaView, StyleSheet, View, TouchableOpacity} from 'react-native'
 import React,{useState, useEffect, useCallback} from 'react'
 import { Actions, Avatar, Bubble, GiftedChat, Send  } from 'react-native-gifted-chat'
 import {primaryColor, succesColor} from '../config/Config'
@@ -8,7 +8,6 @@ import {launchImageLibrary , launchCamera} from 'react-native-image-picker'
 export default function Chat() {
   const [messages, setMessages] = useState([]);
   const [isTyping, setIstyping] =useState();
-
   useEffect(() => {
     setMessages([
       {
@@ -59,21 +58,6 @@ export default function Chat() {
   }
   const sendLocation=()=>{console.log('location sent');}
   const sendContact=()=>{console.log('contact sent');}
-  // const renderCustomAction = (props) => {
-  //   return (
-  //     <View style={styles.customActionsContainer}>
-  //       <TouchableOpacity onPress={openCamera} style={styles.actionButton}>
-  //         <FontAwesome name='camera' size={24} color={primaryColor}/>
-  //       </TouchableOpacity>
-  //       <TouchableOpacity onPress={openLibraryImage} style={styles.actionButton}>
-  //         <FontAwesome name='image' size={24} color={primaryColor}/>
-  //       </TouchableOpacity>
-  //       <TouchableOpacity style={styles.actionButton}>
-  //         <AntDesign name='plus' size={24} color={primaryColor}/>
-  //       </TouchableOpacity>
-  //     </View>
-  //   );
-  // };
   const renderCustomAction = (props)=>{
     return (
     <View style={styles.customActionsContainer}>
@@ -153,7 +137,6 @@ export default function Chat() {
       onInputTextChanged={text=>{setIstyping(text.length>0)}}
     />
     </SafeAreaView>
-
   )
 }
 

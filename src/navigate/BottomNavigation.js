@@ -1,6 +1,6 @@
-import * as React from "react";
+import * as React  from "react"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { TouchableOpacity} from "react-native";
+import { TouchableOpacity, StyleSheet} from "react-native";
 // importing icons 
 import {
   MaterialCommunityIcons,
@@ -14,19 +14,15 @@ import Home from '../screens/Home'
 import Messages from "../screens/Messages";
 import ProfilePage from "../screens/Profile";
 import NotificationsPage from "../screens/Notifications";
-import Reels from "../screens/Reels";
-
-
 // screen names
 const homeName = "Home";
 const MessagesName = "Messages";
 const profileName = "Profile";
 const notificationsName = "Notifications";
-const ReelsName ="Reels"
-
 const Tabs = createBottomTabNavigator();
 
-export default function BottomTapBar() {
+
+export default function BottomTapBar() { 
   return (
       <Tabs.Navigator
         screenOptions={({ route }) => ({
@@ -51,9 +47,7 @@ export default function BottomTapBar() {
                   color={color}
                 ></FontAwesome>
               );
-            } else if (routeName === ReelsName){
-              iconName = focused ? "play-box-multiple" : "play-box-multiple-outline";
-            }
+            } 
               return (
               <MaterialCommunityIcons
                 name={iconName}
@@ -72,19 +66,24 @@ export default function BottomTapBar() {
             fontSize:20,
             fontWeight:"bold"
           },
-         headerRight:()=>(
-          <TouchableOpacity style={{marginRight:15}}>
-            <Ionicons name="settings-outline" color="white" size="24"></Ionicons>
-          </TouchableOpacity>
-         )
+          headerRight:()=>{
+            return(
+            <TouchableOpacity style={{marginRight:15}}>
+              <FontAwesome name='gears' color='white' size={24}/>
+            </TouchableOpacity>
+            )
+          }
         })}
+        
       >
         <Tabs.Screen name={homeName} component={Home} />
         <Tabs.Screen name={MessagesName} component={Messages} />
-        <Tabs.Screen name={ReelsName} component={Reels} />
         <Tabs.Screen name={notificationsName} component={NotificationsPage} />
         <Tabs.Screen name={profileName} component={ProfilePage}/>
-      </Tabs.Navigator>
 
-  );
+      </Tabs.Navigator>
+        );
 }
+
+const styles= StyleSheet.create({
+})

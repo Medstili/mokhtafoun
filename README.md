@@ -34,3 +34,8 @@ npx react-native link react-native-gesture-handler
 <!-- for opening the iphone image library  -->
 npm install react-native-image-picker
 
+<!-- for modals -->
+npm install @react-native-modal
+
+<!-- for drawer navigator -->
+npm install @react-navigation/drawer

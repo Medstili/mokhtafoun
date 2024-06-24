@@ -6,7 +6,7 @@ export default function ForgotPassword({navigation}) {
 
     return (
         <View style={s.container}>
-            <Image source={require("../../../images/logo/logo.png")} style={{ width: '50%', height: 150, marginTop:20,  }} />
+            <Image source={require("../../../images/logo/logo3.png")} style={{ width: '100%', height: 100, marginTop:20,  }} />
             <Text style={s.title}>Forgot Password</Text>
             <View style={s.inputView}>
                 <TextInput 

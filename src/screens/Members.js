@@ -1,64 +1,148 @@
 import { StyleSheet, View, SafeAreaView, TouchableOpacity, Text, TextInput, FlatList} from 'react-native';
 import React, { useState }  from 'react';
 import MemberCard from '../components/MemberCard';
-import {naturalColor,  secondaryColor} from '../config/Config';
+import {secondaryColor} from '../config/Config';
 import {FontAwesome } from 'react-native-vector-icons' ;
 import { GestureHandlerRootView} from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
 
 
 const membersArr =[
     {
-        name:"Mohamed",
+        name:"Mohamed stili",
         status:"Safe",
+        age:24,
+        location:"tanger",
         source: require("../../images/PostImg/profil10.jpg"),
-        id:"1a"
+        id:"1a",
+        description:{
+            height:181,
+            weight:70,
+            eyeColor:"green",
+            skinColor:"white",
+            physical_health:"healthy",
+            mental_health:"healthy",
+            hairColor:"brown",
+            hairType:"wavy",
+        }
     },
     {
-        name:"Youssef",
+        name:"Youssef najah",
         status:"Safe",
+        age:15,
+        location:"rabat",
         source: require("../../images/PostImg/profil8.jpg"),
-        id:"1b"
+        id:"1b",
+        description:{
+            height:170,
+            weight:65,
+            eyeColor:"dark brown",
+            skinColor:"white",
+            physical_health:"healthy",
+            mental_health:"healthy",
+            hairColor:"blond",
+            hairType:"curly",
+        }
     },
     {
-        name:"Max",
+        name:"Max alexandar",
         status:"lost",
+        age:20,
+        location:"fes",
         source: require("../../images/PostImg/profil3.jpg"),
-        id:"1c"
+        id:"1c",
+        description:{
+            height:160,
+            weight:70,
+            eyeColor:"blue",
+            skinColor:"white",
+            physical_health:"handicape",
+            mental_health:"healthy",
+            hairColor:"blond",
+            hairType:"staright",
+        }
     },
     {
-        name:"Saad",
+        name:"Saad sobhi",
         status:"Safe",
+        age:18,
+        location:"casablanca",
         source: require("../../images/PostImg/profil1.jpg"),
-        id:"2bA"
+        id:"2bA",
+        description:{
+            height:150,
+            weight:69,
+            eyeColor:"brown",
+            skinColor:"brown",
+            physical_health:"healthy",
+            mental_health:"disabled",
+            hairColor:"black",
+            hairType:"staright",
+
+        }
     },
     {
-        name:"Lamiae",
+        name:"Lamiae chaghouf",
         status:"Safe",
+        age:16,
+        location:"meknes",
         source: require("../../images/PostImg/profil5.jpg"),
-        id:"3AA"
+        id:"3AA",
+        description:{
+            height:165,
+            weight:70,
+            eyeColor:"black",
+            skinColor:"white",
+            physical_health:"helathy",
+            mental_health:"healthy",
+            hairColor:"balck",
+            hairType:"wavy",
+
+        }
     },
     {
-        name:"Khadija",
+        name:"Khadija kinan",
         status:"lost",
+        age:22,
+        location:"tanger",
         source: require("../../images/PostImg/profil2.jpg"),
-        id:"12bc"
+        id:"12bc",
+        description:{
+            height:160,
+            weight:80,
+            eyeColor:"brown",
+            skinColor:"brown",
+            physical_health:"healthy",
+            mental_health:"healthy",
+            hairColor:"brown",
+            hairType:"curly",
+        }
     },
     {
-        name:"Vector",
+        name:"Vector mari",
         status:"Safe",
+        age:25,
+        location:"taza",
         source: require("../../images/PostImg/profil6.jpg"),
-        id:"12abc"
+        id:"12abc",
+        description:{
+            height:175,
+            weight:57,
+            eyeColor:"grey",
+            skinColor:"white",
+            physical_health:"healthy",
+            mental_health:"healthy",
+            hairColor:"brwown",
+            hairType:"straight",
+
+        }
     },
 
 ]
 
-
-
-
-
 export default function Members() {
     
-
+const navigation = useNavigation()
     // recieving user text input and stay the changes  up to date 
     const [input, setInput] = useState("")
     console.log(input);
@@ -66,7 +150,7 @@ export default function Members() {
     const result = membersArr.filter((member)=> member.name.toLowerCase().includes(input.toLowerCase() ))
     console.log(result);
     // rendering the iems 
-    const renderItems=({item})=>{return <MemberCard  Name={item.name} Status={item.status} Source={item.source}/>}
+    const renderItems=({item})=>{return <MemberCard  Name={item.name} Status={item.status} Source={item.source} onPress={()=>{navigation.navigate('MemberProfile',{name:item.name, status:item.status,age:item.age,source:item.source, location:item.location,description:item.description})}} />}
 
   return (
         <SafeAreaView style={{flex:1,}}>
@@ -135,12 +219,11 @@ const styles = StyleSheet.create({
         width:414,
         alignItems:"center",
         justifyContent:"center",
-        marginTop:10,
-
     },
     flatList:{
         width:414,
         justifyContent:"center",
+        padding:15
     },
     topBar:{
         width:"100%",

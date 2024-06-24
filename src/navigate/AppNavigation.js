@@ -1,9 +1,8 @@
-import { NavigationContainer, useNavigation } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from "react";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { TouchableOpacity, View,Image,Text } from "react-native";
 import {Entypo,Ionicons} from 'react-native-vector-icons';
-
+import { useNavigation } from "@react-navigation/native";
 // importing the screen tha we want to navigate to 
 import Login from "../screens/auth/Login";
 import SignUp from "../screens/auth/SignUp";
@@ -16,29 +15,49 @@ import Welcome from '../screens/Welcome';
 import Members from "../screens/Members"
 import AddPost from "../screens/AddPost";
 import ProfilePage from "../screens/Profile";
-import ChatPage from "../screens/Chat"
+import ChatPage from "../screens/Chat";
+import MemberProfile from "../components/MemberProfile";
+import DrawerNavigation from '../navigate/DrawerNavigation'
 // importing the bottom bar  navigation 
-import BottomNavigation from "./BottomNavigation";
+import BottomNavigation from "./BottomNavigation"
 // imorting the colors 
 import { primaryColor } from "../config/Config";
-
-
 const stack = createNativeStackNavigator();
 
-export default function AppNavigation() {
+export default function AppNavigation({navigation}) {
   return (
-    <NavigationContainer>
-      <stack.Navigator 
+
+
+       <stack.Navigator 
       //  making teh welcome screen be the first pages displayed to the user
-      initialRouteName="Welcome"
+      initialRouteName="Home"
       // hiding the header in this screens (welcome,login,sign up, forgot password)
-      screenOptions={({ route }) => ({headerShown:false})}>
-        <stack.Screen name={"Welcome"} component={Welcome} />
-        <stack.Screen name={"Login"} component={Login} />
-        <stack.Screen name={"SignUp"} component={SignUp} />
-        <stack.Screen name={"Forgot Password"} component={ForgotPassword} />
-        <stack.Screen name={"AddPost"} component={AddPost} />
-        <stack.Screen name={"Profile"} component={ProfilePage} />
+      screenOptions={() => ({headerShown:false})}>
+        <stack.Screen name={"Welcome"} component={Welcome}/>
+        <stack.Screen name={"Login"} component={Login}/>
+        <stack.Screen name={"SignUp"} component={SignUp}/>
+        <stack.Screen name={"SignUp2"} component={SignUp2} options={{headerShown: false}}/>
+        <stack.Screen name={"Forgot Password"} component={ForgotPassword}/>
+        <stack.Screen name={"ConfigPassword"} component={ConfigPassword} options={{headerShown: false}}/>
+        <stack.Screen name={"NewPassword"} component={NewPassword} options={{headerShown: false}}/>
+        <stack.Screen name={"AddPost"} component={AddPost}/>
+        <stack.Screen name={"Profile"} component={ProfilePage}/>
+
+        <stack.Screen 
+        options={({route})=>({
+          headerShown: true,
+          title:route.params.name,
+          headerStyle: {
+            backgroundColor: primaryColor,
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+          headerBackTitle: 'Back',
+        })} 
+        name={"MemberProfile"} component={MemberProfile} 
+        />
         <stack.Screen
          options={({route})=>({
           headerShown: true,
@@ -74,7 +93,7 @@ export default function AppNavigation() {
               <Entypo name="phone" color="white" size="24"/>
             </TouchableOpacity> 
              </View>
-           ),
+          ),
            headerLeft:()=>{
             const navigation = useNavigation()
             return(
@@ -123,15 +142,13 @@ export default function AppNavigation() {
               </TouchableOpacity>
             </View>
                 )
-                  }
+          }
         })} 
-           
         name={"Chat"} component={ChatPage}/>
-        <stack.Screen name="ConfigPassword" component={ConfigPassword} options={{headerShown: false}}/>
-        <stack.Screen name="NewPassword" component={NewPassword} options={{headerShown: false}}/>
+
         <stack.Screen 
         options={{
-          headerShown: true,
+          headerShown: true,          
           title:"Members",
           headerStyle: {
             backgroundColor: primaryColor,
@@ -143,12 +160,15 @@ export default function AppNavigation() {
           headerBackTitle: 'Back',
         }}
         name={"Members"} component={Members} />
-      {/* merging the bottomNavigation with home screen  */}
-        <stack.Screen name={"Home"} component={BottomNavigation} />
-        <stack.Screen name="WebViewScreen" component={WebViewScreen} options={{headerShown: false}}/>
-        <stack.Screen name="SignUp2" component={SignUp2} options={{headerShown: false}}/>
-      </stack.Navigator>
-    </NavigationContainer>
+
+        {/* merging the bottomNavigation with home screen   */}
+        <stack.Screen name={"BottomNavigation"} component={BottomNavigation} />
+        <stack.Screen name={"WebViewScreen"} component={WebViewScreen} options={{headerShown: false}}/>
+        <stack.Screen name={"DrawerNavigation"} component={DrawerNavigation} options={{headerShown: false}}/>
+        
+      </stack.Navigator>  
+
+
   );
 }
 

@@ -11,15 +11,9 @@ export default function ConfigPassword({ navigation }) {
         setNumber(numericInput);
     };
 
-    function handleChange(event, selectedDate) {
-        const currentDate = selectedDate || date;
-        setShow(false);
-        setDate(currentDate);
-    }
-
     return (
         <View style={s.container}>
-            <Image source={require("../../../images/logo/logo.png")} style={{ width: '50%', height: 150, marginTop: 20 }} />
+            <Image source={require("../../../images/logo/logo3.png")} style={{ width: '100%', height: 90, marginTop: 20 }} />
             <Text style={s.title}>Enter the Code</Text>
             <View style={s.inputView}>
                 <TextInput

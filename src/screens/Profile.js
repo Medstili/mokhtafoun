@@ -1,7 +1,7 @@
 import React from "react";
-import { StyleSheet, Text, View , ImageBackground, TouchableOpacity, ScrollView,SafeAreaView, FlatList} from 'react-native';
+import { StyleSheet, Text, View , Image, TouchableOpacity, ScrollView,SafeAreaView, FlatList} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome' ; 
-import {  secondaryColor, naturalColor, succesColor } from "../config/Config";
+import {  secondaryColor, naturalColor } from "../config/Config";
 import PostCard from "../components/postCard";
 
  let postData =[
@@ -65,7 +65,7 @@ export default function ProfilePage({navigation}) {
 
     {/* img container */}
       <View style={[styles.user_img_container]}>
-    <ImageBackground source={require('../../images/PostImg/profil7.jpg')} style={styles.user_img}></ImageBackground>
+    <Image source={require('../../images/PostImg/profil7.jpg')} style={styles.user_img}/>
       </View>
 
     {/* user info */}
@@ -109,15 +109,15 @@ export default function ProfilePage({navigation}) {
 
     <View style={styles.family_members} >
       <View  style={styles.member}>
-        <ImageBackground style={styles.member_img} source={require('../../images/PostImg/profil9.jpg')}></ImageBackground>
+        <Image style={styles.member_img} source={require('../../images/PostImg/profil9.jpg')}/>
       </View>
 
       <View  style={styles.member}>
-        <ImageBackground  style={styles.member_img}source={require('../../images/PostImg/profil8.jpg')}></ImageBackground>
+        <Image  style={styles.member_img}source={require('../../images/PostImg/profil8.jpg')}/>
       </View>
 
       <View  style={styles.member}>
-        <ImageBackground  style={styles.member_img}source={require('../../images/PostImg/profil3.jpg')}></ImageBackground>
+        <Image  style={styles.member_img}source={require('../../images/PostImg/profil3.jpg')}/>
       </View>
 
       </View>

@@ -1,8 +1,10 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity,FlatList} from 'react-native'
+import { View, StyleSheet, TouchableOpacity,FlatList, TextInput} from 'react-native'
 import { primaryColor, } from '../config/Config'
 import { Feather } from '@expo/vector-icons';
 import PostCard from '../components/postCard';
+
+import {FontAwesome , Ionicons}from 'react-native-vector-icons';
 
 
 DataPosts = [
@@ -57,8 +59,7 @@ DataPosts = [
 ]
 
 const  PostFeed = ({navigation}) => {
-
-  const renderItems=({item})=>{
+const renderItems=({item})=>{
     return <PostCard 
     Poster={item.name}
     Description={item.text}
@@ -68,10 +69,20 @@ const  PostFeed = ({navigation}) => {
     />
   }
 
-
   return (
     <View style={styles.container}>
-      
+      <View style={styles.searchBarContainer}>
+                    <View style={styles.searchBar}>
+                   <FontAwesome name="search" size={24} color={"gray"} />
+                   <TextInput 
+                   placeholder="Search..."
+                  //  value={}
+                   style={{width:300}}/>
+                   </View>
+                   <TouchableOpacity>
+                        <Ionicons name="filter" size={24}/>
+                   </TouchableOpacity>
+                </View>
       <FlatList 
       contentContainerStyle={styles.posts}
       data={DataPosts}
@@ -85,8 +96,7 @@ const  PostFeed = ({navigation}) => {
             </View>
       </TouchableOpacity>
       
-    </View>
-      
+    </View> 
   )
 }
 export default PostFeed
@@ -98,6 +108,24 @@ const styles = StyleSheet.create({
     justifyContent:"center",
     alignItems:"center",
   },
+  searchBarContainer:{
+    width:414,
+    flexDirection:"row",
+    justifyContent:"space-around",
+    alignItems:"center",
+    height:60,
+    paddingHorizontal:10
+},
+searchBar:{
+    flexDirection:"row",
+    width:340,
+    backgroundColor:"white",
+    alignItems:"center",
+    justifyContent:"space-evenly",
+    borderWidth:1,
+    borderRadius:30,
+    padding:8
+},
   AddPostbtn: {
     backgroundColor: primaryColor,
     width:60,

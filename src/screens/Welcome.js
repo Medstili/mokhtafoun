@@ -5,7 +5,7 @@ import {primaryColor, secondaryColor,naturalColor, complementatry, alertColor, s
 export default function WelcomPagePage ({navigation}) {
     return (
         <View style={s.container}>
-      <Image source={require("../../images/logo/logo.png")} style={s.topImage}/> 
+      <Image source={require("../../images/logo/logo3.png")} style={s.topImage}/> 
       <Text style={s.title}>MOUKHTAFOUN is your application that helps you find your missing person</Text>
       <View style={{flexDirection:'row', marginTop:30,}}>
       <TouchableOpacity onPress={()=> navigation.navigate('Login')}  style={s.btnlogin}>
@@ -28,7 +28,7 @@ const s = StyleSheet.create({
     },
     topImage: {
       width: '80%',
-      height: 300,
+      height: 100,
     },
     title:{
       fontSize: 18,

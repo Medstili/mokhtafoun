@@ -1,11 +1,11 @@
 import { View, Text, StyleSheet, TextInput, username, setUsername, password, setPassword, TouchableOpacity, Switch, Pressable, Image } from "react-native";
 import React, { useState } from 'react';
-import {primaryColor,  succesColor} from "../../config/Config";
+import {primaryColor,  secondaryColor,  succesColor} from "../../config/Config";
 export default function Login({navigation}) {
     const [click, setClick] = useState(false)
     return (
         <View style={s.container}>
-            <Image source={require("../../../images/logo/logo.png")} style={{ width: '40%', height: 120, marginTop:45, }} />
+            <Image source={require("../../../images/logo/logo3.png")} style={{ width: '100%', height: 120, marginTop:45, }} />
             <Text style={s.title}>Login</Text>
             <View style={s.inputView}>
                 <TextInput style={s.input} placeholder='EMAIL OR USERNAME' value={username} onChangeText={setUsername} autoCorrect={false}
@@ -28,7 +28,7 @@ export default function Login({navigation}) {
                     </Pressable>
                 </View>
             </View>
-            <TouchableOpacity onPress={() => navigation.navigate('Home')} style={s.btnlogin} >
+            <TouchableOpacity onPress={() => navigation.navigate('BottomNavigation')} style={s.btnlogin} >
                 <Text style={{ color: '#fff', textAlign: 'center', fontSize: 25, }}>Login</Text>
             </TouchableOpacity>
             <Text style={s.optionsText}>OR LOGIN WITH</Text>
@@ -65,7 +65,7 @@ const s = StyleSheet.create({
         textTransform: "uppercase",
         textAlign: "center",
         paddingVertical: 25,
-        color: "#004C99"
+        color: primaryColor
     },
     inputView: {
         gap: 15,
@@ -76,12 +76,12 @@ const s = StyleSheet.create({
     input: {
         height: 50,
         paddingHorizontal: 20,
-        borderColor: "#004C99",
+        borderColor: primaryColor,
         borderWidth: 1,
         borderRadius: 7
     },
     btnlogin: {
-        backgroundColor: "#004C99",
+        backgroundColor: primaryColor,
         color: "white",
         fontSize: 18,
         fontWeight: "bold",
@@ -110,7 +110,7 @@ const s = StyleSheet.create({
     },
     forgetText: {
         fontSize: 11,
-        color: "#004C99",
+        color: secondaryColor,
     },
     topImage: {
         width: 30,
