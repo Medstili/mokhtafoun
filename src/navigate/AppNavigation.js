@@ -22,6 +22,7 @@ import DrawerNavigation from '../navigate/DrawerNavigation'
 import BottomNavigation from "./BottomNavigation"
 // imorting the colors 
 import { primaryColor } from "../config/Config";
+import Settings from "../screens/Settings";
 const stack = createNativeStackNavigator();
 
 export default function AppNavigation({navigation}) {
@@ -42,6 +43,8 @@ export default function AppNavigation({navigation}) {
         <stack.Screen name={"NewPassword"} component={NewPassword} options={{headerShown: false}}/>
         <stack.Screen name={"AddPost"} component={AddPost}/>
         <stack.Screen name={"Profile"} component={ProfilePage}/>
+        <stack.Screen name={"Settings"} component={Settings}/>
+
 
         <stack.Screen 
         options={({route})=>({

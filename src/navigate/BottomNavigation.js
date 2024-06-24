@@ -22,7 +22,7 @@ const notificationsName = "Notifications";
 const Tabs = createBottomTabNavigator();
 
 
-export default function BottomTapBar() { 
+export default function BottomTapBar({navigation}) { 
   return (
       <Tabs.Navigator
         screenOptions={({ route }) => ({
@@ -68,7 +68,7 @@ export default function BottomTapBar() {
           },
           headerRight:()=>{
             return(
-            <TouchableOpacity style={{marginRight:15}}>
+            <TouchableOpacity style={{marginRight:15}} onPress={()=>{navigation.navigate('Settings')}}>
               <FontAwesome name='gears' color='white' size={24}/>
             </TouchableOpacity>
             )
